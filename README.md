@@ -410,6 +410,35 @@ module.exports = {
 };
 ```
 
+### `afterEach`
+
+Type: `Function`
+Default: `undefined`
+
+A function called after processing a file. Receives two arguments: loader context and generated path.
+
+**webpack.config.js**
+
+```js
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              afterEach: (loaderCtx, generatedPath) => { /* ... */ }
+            },
+          },
+        ],
+      },
+    ],
+  },
+};
+```
+
 ## Placeholders
 
 Full information about placeholders you can find [here](https://github.com/webpack/loader-utils#interpolatename).

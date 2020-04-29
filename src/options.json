@@ -60,6 +60,10 @@
     "esModule": {
       "description": "By default, file-loader generates JS modules that use the ES modules syntax.",
       "type": "boolean"
+    },
+    "afterEach": {
+      "description": "A function called after processing a file",
+      "instanceof": "Function"
     }
   },
   "type": "object"

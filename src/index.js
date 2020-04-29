@@ -59,10 +59,16 @@ export default function loader(content) {
     this.emitFile(outputPath, content);
   }
 
+  const { afterEach } = options;
+
+  if (afterEach) {
+    afterEach(this, outputPath);
+  }
+
   const esModule =
     typeof options.esModule !== 'undefined' ? options.esModule : true;
 
   return `${esModule ? 'export default' : 'module.exports ='} ${publicPath};`;
-}
+};
 
 export const raw = true;
